@@ -1,0 +1,17 @@
+go 1.20
+
+use (
+	.
+	./linkedlist
+)
+
+// command to manage/clean up go workspace with multiple modules: go work use -r <dir>
+// other options:
+// edit        edit go.work from tools or scripts
+// init        initialize workspace file
+// sync        sync workspace build list to modules
+// use         add modules to workspace file
+// help: go help work/ go help work use
+
+// packages
+// linkedlist/package main
