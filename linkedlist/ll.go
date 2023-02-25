@@ -8,10 +8,11 @@ type List struct {
 }
 
 func main() {
-	ll := List{
+	ll := &List{
 		data: 1,
+		node: nil,
 	}
-	ll.insertAtHead(0)
+	ll = ll.insertAtHead(0)
 	fmt.Println("printing after inserting element at head")
 	ll.print()
 	ll.insertAtTail(3)
@@ -31,11 +32,11 @@ func main() {
 	ll.print()
 }
 
-func (ll *List) insertAtHead(data int) {
+func (ll *List) insertAtHead(data int) *List {
 	// create a head node
 	// add addr of linked list as head.node
 	// edit linked list head to addr of head
-	ll = &List{
+	return &List{
 		data: data,
 		node: ll,
 	}
@@ -89,11 +90,7 @@ func (ll *List) deleteByKey(key int) {
 	head, prev := ll, &List{}
 	for {
 		if head.data == key {
-			if prev.node == nil {
-				ll = head.node
-			} else {
-				prev.node = head.node
-			}
+			prev.node = head.node
 			break
 		}
 		if head.node == nil {
