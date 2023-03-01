@@ -1,14 +1,14 @@
-package main
+package linkedlist
 
 import "fmt"
 
-type SinglyLinkedList struct {
+type singlyLinkedList struct {
 	data int
-	node *SinglyLinkedList
+	node *singlyLinkedList
 }
 
-func singlyLinkedList() {
-	ll := &SinglyLinkedList{
+func SinglyLinkedList() {
+	ll := &singlyLinkedList{
 		data: 1,
 		node: nil,
 	}
@@ -32,23 +32,23 @@ func singlyLinkedList() {
 	ll.print()
 }
 
-func (ll *SinglyLinkedList) insertAtHead(data int) *SinglyLinkedList {
+func (ll *singlyLinkedList) insertAtHead(data int) *singlyLinkedList {
 	// create a head node
 	// add addr of linked list as head.node
 	// edit linked list head to addr of head
-	return &SinglyLinkedList{
+	return &singlyLinkedList{
 		data: data,
 		node: ll,
 	}
 }
-func (ll *SinglyLinkedList) insertAtTail(data int) {
+func (ll *singlyLinkedList) insertAtTail(data int) {
 	// iterate over linked list
 	// check if head.node is nil, meaning end of list
 	// add address of new node to head.node
 	head := ll
 	for {
 		if head.node == nil {
-			head.node = &SinglyLinkedList{
+			head.node = &singlyLinkedList{
 				data: data,
 			}
 			break
@@ -56,14 +56,14 @@ func (ll *SinglyLinkedList) insertAtTail(data int) {
 		head = head.node
 	}
 }
-func (ll *SinglyLinkedList) insertByIndex(data, index int) {
+func (ll *singlyLinkedList) insertByIndex(data, index int) {
 	// iterate over list
 	// check if iteration equals index
 	// prev node will refer to addr of new node, new node will refer to addr of curr node
-	iter, head, prev := 0, ll, &SinglyLinkedList{}
+	iter, head, prev := 0, ll, &singlyLinkedList{}
 	for {
 		if iter == index {
-			new_node := SinglyLinkedList{
+			new_node := singlyLinkedList{
 				data: data,
 				node: head,
 			}
@@ -83,11 +83,11 @@ func (ll *SinglyLinkedList) insertByIndex(data, index int) {
 		head = head.node
 	}
 }
-func (ll *SinglyLinkedList) deleteByKey(key int) {
+func (ll *singlyLinkedList) deleteByKey(key int) {
 	// iterate over list
 	// if curr.data == key
 	// prev.node will point to curr.node
-	head, prev := ll, &SinglyLinkedList{}
+	head, prev := ll, &singlyLinkedList{}
 	for {
 		if head.data == key {
 			prev.node = head.node
@@ -101,11 +101,11 @@ func (ll *SinglyLinkedList) deleteByKey(key int) {
 		head = head.node
 	}
 }
-func (ll *SinglyLinkedList) deleteByIndex(index int) {
+func (ll *singlyLinkedList) deleteByIndex(index int) {
 	// iterate over list
 	// if iter == index
 	// prev.node will point to curr.node
-	iter, head, prev := 0, ll, &SinglyLinkedList{}
+	iter, head, prev := 0, ll, &singlyLinkedList{}
 	for {
 		if iter == index {
 			if prev.node == nil {
@@ -124,7 +124,7 @@ func (ll *SinglyLinkedList) deleteByIndex(index int) {
 		head = head.node
 	}
 }
-func (ll *SinglyLinkedList) print() {
+func (ll *singlyLinkedList) print() {
 	head := ll
 	for {
 		fmt.Print(head.data)

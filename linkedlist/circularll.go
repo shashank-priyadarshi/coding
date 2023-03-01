@@ -1,12 +1,12 @@
-package main
+package linkedlist
 
-type CircularLinkedList struct {
+type circularLinkedList struct {
 	data int
-	next *CircularLinkedList
-	prev *CircularLinkedList
+	next *circularLinkedList
+	prev *circularLinkedList
 }
 
-func circularLinkedList()                     {}
-func (ll *CircularLinkedList) insertByIndex() {}
-func (ll *CircularLinkedList) deleteByIndex() {}
-func (ll *CircularLinkedList) print()         {}
+func CircularLinkedList()                     {}
+func (ll *circularLinkedList) insertByIndex() {}
+func (ll *circularLinkedList) deleteByIndex() {}
+func (ll *circularLinkedList) print()         {}
