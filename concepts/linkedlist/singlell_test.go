@@ -1,10 +1,10 @@
-package main
+package linkedlist
 
 import "testing"
 
 func TestInsertAtHead(t *testing.T) {
 	// Create a new list with one node
-	list := &SinglyLinkedList{
+	list := &singlyLinkedList{
 		data: 1,
 		node: nil,
 	}
@@ -32,7 +32,7 @@ func TestInsertAtHead(t *testing.T) {
 
 func TestInsertAtTail(t *testing.T) {
 	// Create a new list with one node
-	list := &SinglyLinkedList{
+	list := &singlyLinkedList{
 		data: 1,
 		node: nil,
 	}
@@ -55,7 +55,7 @@ func TestInsertAtTail(t *testing.T) {
 
 func TestInsertByIndex(t *testing.T) {
 	// Create a new list with one node
-	list := &SinglyLinkedList{
+	list := &singlyLinkedList{
 		data: 1,
 		node: nil,
 	}
@@ -88,7 +88,7 @@ func TestInsertByIndex(t *testing.T) {
 
 func TestDeleteByKey(t *testing.T) {
 	// Create a new list with one node
-	list := &SinglyLinkedList{
+	list := &singlyLinkedList{
 		data: 1,
 		node: nil,
 	}
@@ -127,7 +127,7 @@ func TestDeleteByKey(t *testing.T) {
 
 func TestDeleteByIndex(t *testing.T) {
 	// Create a new list with one node
-	list := &SinglyLinkedList{
+	list := &singlyLinkedList{
 		data: 1,
 		node: nil,
 	}
@@ -166,7 +166,7 @@ func TestDeleteByIndex(t *testing.T) {
 
 func TestPrintList(t *testing.T) {
 	// Create a new list with one node
-	list := &SinglyLinkedList{
+	list := &singlyLinkedList{
 		data: 1,
 		node: nil,
 	}

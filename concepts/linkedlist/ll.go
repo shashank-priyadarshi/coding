@@ -1,7 +1,7 @@
-package main
+package linkedlist
 
 func main() {
-	singlyLinkedList()
-	doublyLinkedList()
-	circularLinkedList()
+	// singlyLinkedList()
+	// doublyLinkedList()
+	// circularLinkedList()
 }
