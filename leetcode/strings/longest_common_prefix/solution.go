@@ -8,6 +8,11 @@ func main() {
 	fmt.Println(longestCommonPrefix([]string{"abaa", "abc", "abca"}))
 }
 
+// longestCommonPrefix finds the longest common prefix string amongst an array of strings.
+//
+// words: an array of strings to search through
+// commonChar: string containing the longest common prefix found
+// Returns the longest common prefix as a string
 func longestCommonPrefix(words []string) (commonChar string) {
 	if len(words[0]) == 0 {
 		return
@@ -35,6 +40,14 @@ func longestCommonPrefix(words []string) (commonChar string) {
 	return
 }
 
+// commonChars returns the common prefix between two strings.
+//
+// word1: the first string to compare.
+// word2: the second string to compare.
+// commonChar: the common prefix between word1 and word2.
+//             An empty string is returned if either word1 or word2 is empty.
+//             If word1 and word2 are the same, word1 is returned.
+//             If no common prefix is found, an empty string is returned.
 func commonChars(word1, word2 string) (commonChar string) {
 	if word1 == word2 {
 		return word1
