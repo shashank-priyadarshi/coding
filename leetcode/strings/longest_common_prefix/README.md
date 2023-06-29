@@ -1,4 +1,7 @@
-Approach 1:
+# Longest Common Prefix
+
+## Approach 1
+
 - If length of first word is 0, return empty string
 - Find first character of first word
 - Iterate over words array
@@ -10,8 +13,10 @@ Approach 1:
 - If length of temporary variable is less than length of prefix, prefix=temporary variable
 - continue till last element
 
-Approach 2:
+## Approach 2
+
 - Find first character of first word, if word found with a different first character, return nil
 - Get string with smallest length in the array
-- 
-https://leetcode.com/problems/longest-common-prefix/
+-
+
+<https://leetcode.com/problems/longest-common-prefix/>
