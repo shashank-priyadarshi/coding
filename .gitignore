@@ -3,3 +3,4 @@
 *.json
 *.pdf
 .idea
+!design-patterns.pdf
