@@ -1,0 +1,47 @@
+package main
+
+import "fmt"
+
+type email struct {
+	from, to, subject, body string
+}
+type EmailBuilder struct {
+	email
+}
+
+func (e *EmailBuilder) From(from string) *EmailBuilder {
+	e.email.from = from
+	return e
+}
+func (e *EmailBuilder) To(to string) *EmailBuilder {
+	e.email.to = to
+	return e
+}
+func (e *EmailBuilder) Body(body string) *EmailBuilder {
+	e.email.body = body
+	return e
+}
+func (e *EmailBuilder) Subject(subject string) *EmailBuilder {
+	e.email.subject = subject
+	return e
+}
+
+type build func(*EmailBuilder)
+
+func SendEmail(action build) {
+	emailBuilder := &EmailBuilder{}
+	action(emailBuilder)
+	sendEmailImp(emailBuilder.email)
+}
+
+func sendEmailImp(e email) {
+	fmt.Printf("e: %+v\n", e)
+	// impl came here
+}
+
+func main() {
+	SendEmail(func(eb *EmailBuilder) {
+		eb.From("as@gmail.com").To("sskj@gmail.com").
+			Subject("subject").Body("hi this is body")
+	})
+}

@@ -1,0 +1,126 @@
+// package main
+
+// import (
+// 	"encoding/hex"
+// 	"encoding/json"
+// 	"fmt"
+// )
+
+// type TokenRequest struct {
+// 	// Define your TokenRequest fields here
+// }
+
+// type TokenTransferRequest struct {
+// 	DocType          string         `json:"docType"`
+// 	ID               string         `json:"id"`
+// 	SubType          string         `json:"subType"`
+// 	TotalAmount      float64        `json:"totalAmount"`
+// 	TokensRequested  []TokenRequest `json:"tokensRequested"`
+// 	ReceivingAddress string         `json:"receivingAddress"`
+// 	ReceivingOrg     string         `json:"receivingOrg"`
+// 	SendingAddress   string         `json:"sendingAddress"`
+// 	SendingOrg       string         `json:"sendingOrg"`
+// 	Status           string         `json:"status"`
+// 	TxnRefNo         string         `json:"txnRefNo"`
+// 	RecallID         string         `json:"recallId"`
+// 	CreateTimestamp  string         `json:"createTimestamp"`
+// 	Meta             string         `json:"meta"`
+// }
+
+// func main() {
+// 	hashbytes := []byte{110, 202, 56, 124, 0, 226, 196, 42, 5, 182, 29, 71, 126, 208, 134, 180, 144, 55, 179, 10, 244, 11, 124, 161, 240, 108, 105, 156, 83, 91, 6, 116}
+
+// 	// Convert hashbytes to hexadecimal string
+// 	hashString := hex.EncodeToString(hashbytes)
+
+// 	// Unmarshal the hexadecimal string into TokenTransferRequest struct
+// 	var request TokenTransferRequest
+// 	err := json.Unmarshal([]byte(hashString), &request)
+// 	if err != nil {
+// 		fmt.Println("Error:", err)
+// 		return
+// 	}
+
+// 	// Print the unmarshalled struct
+// 	fmt.Printf("%+v\n", request)
+// }
+
+package main
+
+import (
+	"crypto/sha256"
+	"encoding/hex"
+	"encoding/json"
+	"fmt"
+)
+
+type TokenRequest struct {
+	// Define your TokenRequest fields here
+}
+
+type TokenTransferRequest struct {
+	DocType          string         `json:"docType"`
+	ID               string         `json:"id"`
+	SubType          string         `json:"subType"`
+	TotalAmount      float64        `json:"totalAmount"`
+	TokensRequested  []TokenRequest `json:"tokensRequested"`
+	ReceivingAddress string         `json:"receivingAddress"`
+	ReceivingOrg     string         `json:"receivingOrg"`
+	SendingAddress   string         `json:"sendingAddress"`
+	SendingOrg       string         `json:"sendingOrg"`
+	Status           string         `json:"status"`
+	TxnRefNo         string         `json:"txnRefNo"`
+	RecallID         string         `json:"recallId"`
+	CreateTimestamp  string         `json:"createTimestamp"`
+	Meta             string         `json:"meta"`
+}
+
+func GetDataHash(receivedData TokenTransferRequest) ([]byte, error) {
+	// Convert struct to JSON
+	receivedDataStr, err := json.Marshal(receivedData)
+	if err != nil {
+		return nil, fmt.Errorf("error while marshalling received Data: %w", err)
+	}
+
+	// Generate SHA-256 hash
+	receivedDataHash := sha256.Sum256(receivedDataStr)
+
+	return receivedDataHash[:], nil
+}
+
+func main() {
+	// Example TokenTransferRequest data
+	data := TokenTransferRequest{
+		DocType: "example",
+		// Fill in other fields as needed
+	}
+
+	// Get hash bytes
+	hashBytes, err := GetDataHash(data)
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+
+	// Convert hashBytes to a hexadecimal string
+	hashString := hex.EncodeToString(hashBytes)
+
+	// Print the hash
+	fmt.Println("Hash:", hashString)
+
+	// Unmarshal the hash back into the struct
+	var request TokenTransferRequest
+	hashBytes, err = hex.DecodeString(hashString)
+	if err != nil {
+		fmt.Println("Error decoding hex string:", err)
+		return
+	}
+	err = json.Unmarshal(hashBytes, &request)
+	if err != nil {
+		fmt.Println("Error unmarshalling hash:", err)
+		return
+	}
+
+	// Print the unmarshalled struct
+	fmt.Printf("%+v\n", request)
+}
