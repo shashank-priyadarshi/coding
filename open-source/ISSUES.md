@@ -12,22 +12,16 @@
 ## Interesting
 
 - containerd/containerd: [image names less permissive](https://github.com/containerd/containerd/issues/7986)
-- gofireflyio/aiac: [limiting tokens per minute](https://github.com/gofireflyio/aiac/issues/21)
 - zricethezav/gitleaks: [~ does not convert to home](https://github.com/zricethezav/gitleaks/issues/935)
 - owncast/owncast: [Add additional chat role of "Streamer"](https://github.com/owncast/owncast/issues/1973)
 - owncast/owncast: [Owncast documentation web site does not have an opengraph image assigned](https://github.com/owncast/owncast/issues/2230)
-- owncast/owncast: [Set stream title in video tag for iframe embed of owncast streaming url](https://github.com/owncast/owncast/issues/2702)
 - sigstore/cosign: [Inappropriate printing to STDOUT](https://github.com/sigstore/cosign/issues/2510)
-- caddyserver/caddy:[Implement storage import/export](https://github.com/caddyserver/caddy/pull/5532)
 - grpc/grpc-go: [Standardize log messages from LB policies](https://github.com/grpc/grpc-go/issues/5535)
-- grpc/grpc-go: [grpc: add optional interface to return channel authority](https://github.com/grpc/grpc-go/issues/5360)
-- grpc/grpc-go: [tls: clarify/cleanup TLS cipher list](https://github.com/grpc/grpc-go/issues/5075)
 - grpc/grpc-go: [Feature Request: Add support for custom transport (in-process, wasm)](https://github.com/grpc/grpc-go/issues/906)
 - grpc/grpc-go: [http2_client is missing tests](https://github.com/grpc/grpc-go/issues/2248)
 - grpc/grpc-go: [end2end test cleanup](https://github.com/grpc/grpc-go/issues/2330)
 - grpc/grpc-go: [Document everything available in service handler context](https://github.com/grpc/grpc-go/issues/2664)
 - grpc/grpc-go: [dns: scoped literal IPv6 addresses should be supported](https://github.com/grpc/grpc-go/issues/3272)
-- grpc/grpc-go: [go-grpc uses https_proxy as proxy even with grpc.WithInsecure()](https://github.com/grpc/grpc-go/issues/4255)
 
 ## Closed
 
