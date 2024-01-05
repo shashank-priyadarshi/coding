@@ -1,0 +1,30 @@
+# Educative.io System Design
+
+- DNS
+- LB
+- Database
+- KV Store
+- CDN
+- Sequencer
+- Distributed cache
+- Distributed messaging queue
+- Pub sub
+- Rate limiter
+- Blob store
+- Distributed search
+- Distributed logging
+- Distributed task scheduler
+- Sharded Counter
+- YouTube
+- Quora
+- Google Maps
+- Proximity service(Yelp)
+- Uber
+- Twitter
+- Newsfeed system
+- Instagram
+- URL shortening service
+- Web crawler
+- WhatsApp
+- Type ahead Suggestion
+- Collaborative document editing service
