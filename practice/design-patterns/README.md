@@ -12,9 +12,9 @@ These patterns focus on object creation mechanisms, providing flexibility in how
 Ensures only one instance of a class exists throughout the application.  It provides global access to this single instance and prevents multiple instances from being created. This pattern is useful in situations where sharing a single instance of a class is important, such as managing access to a shared resource or controlling system-wide configurations.
 
 - Singleton class
-- Has property that holds instance of instance of singleton class
+- Has property that holds instance of singleton class
 - Private constructor initializes the class
-- Public method initializes class if not already initialized, else return singleton class
+- Public method initializes class if not already initialized, else returns singleton class
 
 ```go
     package main

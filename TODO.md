@@ -1,0 +1,85 @@
+# TODO
+
+- [Open Source](./open-source/ISSUES.md)
+  - hyperledger/fabric-contract-api-go: Tutorial out of date
+  - hyperledger/fabric-contract-api-go: Add a Makefile
+  - gamifying-refactoring: Translate code to Rust
+  - prometheus/prometheus: Remote Write page in UI
+  - grpc/grpc-go: Add an example to illustrate the use of authz package
+  - grpc/grpc-go: ringhash: improve test coverage
+
+- [Practice](./practice)
+  - [DS](./practice/data-structures)
+    - Stack
+    - Queue
+    - Graph
+    - Tree
+  - [Algorithms](./practice/algorithms)
+    - Insertion Sort
+    - Merge Sort
+    - Quick Sort
+    - Binary Search
+    - Depth First Search
+    - Breadth First Search
+    - Greedy Algorithm
+  - [Concurrency Patterns](./practice/go-concurrency-patterns)
+    - Circuit Breaker
+    - Context
+    - Fanin Fanout
+    - PubSub
+    - Select with Timeout
+    - Workerpool
+  - [Design Patterns](./practice/design-patterns)
+    - Creational
+      - Factory Method
+      - Abstract Factory
+      - Prototype
+      - Object Pool
+      - Curiously Recurring Template
+      - Dependency Injection
+    - Structural
+      - Facade
+      - Flyweight
+      - Bridge
+      - Proxy
+    - Behavioral
+      - Mediator
+      - Iterator
+      - Concurrency
+      - Chain of Responsibility
+      - Memento
+      - Template Method
+      - Visitor
+      - State
+    - Architectural
+      - Factory Method
+      - Abstract Factory Method
+  - [System Design](./practice/system-design)
+    - DNS
+    - LB
+    - Database
+    - KV Store
+    - CDN
+    - Sequencer
+    - Distributed cache
+    - Distributed messaging queue
+    - Pub sub
+    - Rate limiter
+    - Blob store
+    - Distributed search
+    - Distributed logging
+    - Distributed task scheduler
+    - Sharded Counter
+    - YouTube
+    - Quora
+    - Google Maps
+    - Proximity service(Yelp)
+    - Uber
+    - Twitter
+    - Newsfeed system
+    - Instagram
+    - URL shortening service
+    - Web crawler
+    - WhatsApp
+    - Type ahead Suggestion
+    - Collaborative document editing service
